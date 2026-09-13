@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Smart public notice board for Sumathi Reddy Institute of Technology for Women, Warangal.">
+  <title>Notice Board | SRITW Warangal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index3.css">
+  <script src="index3.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="SRITW notice board home">
+        <img src="https://www.sritw.org/styles/images/logo3.png" alt="SRITW logo">
+        <span><strong>SRITW</strong><small>Sumathi Reddy Institute<br>of Technology for Women</small></span>
+      </a>
+      <div class="header-actions"><span class="live-status"><i></i> Live board</span><button class="admin-trigger" id="open-login" type="button">Super Admin <span>↗</span></button></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div><p class="eyebrow">Ananthasagar · Hasanparthy · Warangal</p><h1>Everything important,<br><em>in one place.</em></h1><p class="hero-copy">The official-style public notice board for students, parents and staff. Search updates, check deadlines and open published attachments.</p></div>
+      <div class="hero-panel"><img class="hero-image" src="https://www.sritw.org/styles/images/index/banner/SRITW-Banner-multi.jpg" alt="SRITW campus and students"><div class="hero-panel-content"><span class="panel-label">Today at SRITW</span><strong id="today-date">--</strong><span>Notices are automatically archived after their expiry date.</span><div class="signal"><i></i><span>Updates sync locally in this demo</span></div></div></div>
+    </section>
+
+    <section class="campus-strip wrap" aria-label="SRITW campus highlights"><div class="campus-intro"><p class="eyebrow">Life on campus</p><h2>Updates from<br><em>your campus.</em></h2></div><figure><img src="https://www.sritw.org/styles/images/index/campus3.png" alt="SRITW campus facilities"><figcaption>Campus facilities</figcaption></figure><figure><img src="https://www.sritw.org/styles/images/index/hostel.png" alt="SRITW hostel facilities"><figcaption>Hostel life</figcaption></figure><figure><img src="https://www.sritw.org/styles/images/index/transportion.jpg" alt="SRITW transport facility"><figcaption>Student transport</figcaption></figure></section>
+
+    <section class="board wrap" aria-labelledby="board-title">
+      <div class="board-heading"><div><p class="eyebrow">Public notice board</p><h2 id="board-title">Latest updates</h2></div><div class="board-count"><strong id="notice-count">0</strong><span>active notices</span></div></div>
+      <div class="featured-grid" id="featured-notices"></div>
+      <div class="tools" aria-label="Notice search and filters"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search notices, keywords or dates" aria-label="Search notices"></label><label class="select-wrap"><span>Category</span><select id="category-filter"><option value="All">All categories</option><option>Academics</option><option>Exams</option><option>Placements</option><option>Events</option><option>Hostel</option><option>Transport</option></select></label><label class="select-wrap"><span>Priority</span><select id="priority-filter"><option value="All">All priorities</option><option>Urgent</option><option>Important</option><option>Normal</option></select></label><button class="clear-button" id="clear-filters" type="button">Clear</button></div>
+      <div class="notice-layout"><div class="notice-list" id="notice-list" aria-live="polite"></div><aside class="board-aside"><div class="aside-card"><span class="aside-icon">!</span><h3>Need to act soon?</h3><p>Urgent notices appear first. Always open the original attachment for complete instructions and deadlines.</p></div><div class="aside-card source-card"><span class="aside-label">Institution</span><strong>SRITW Warangal</strong><p>Ananthasagar, Hasanparthy<br>Warangal, Telangana 506371</p><a href="https://www.sritw.org/" target="_blank" rel="noopener">Visit official website ↗</a></div></aside></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><div><a class="brand footer-brand" href="#top"><img src="https://www.sritw.org/styles/images/logo3.png" alt="SRITW logo"><span><strong>SRITW</strong><small>Notice Board</small></span></a><p>Smart public updates for the SRITW community.</p></div><div class="footer-links"><a href="https://www.sritw.org/" target="_blank" rel="noopener">Official website</a><a href="https://g.page/SRITW?share" target="_blank" rel="noopener">Campus directions</a><a href="mailto:info@sritw.org">Contact college</a></div><span class="demo-label">Local demo · data stays in this browser</span></div></footer>
+
+  <div class="modal" id="login-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-title"><div class="modal-backdrop" data-close-modal></div><div class="modal-card"><button class="modal-close" type="button" aria-label="Close login" data-close-modal>×</button><p class="eyebrow">Restricted access</p><h2 id="login-title">Super Admin<br><em>sign in.</em></h2><p class="modal-copy">Only the Super Admin can add, edit, delete or publish notices.</p><form id="login-form"><label for="admin-username">Username</label><input id="admin-username" autocomplete="username" required><label for="admin-password">Password</label><input id="admin-password" type="password" autocomplete="current-password" required><button class="primary-button full" type="submit">Open admin panel <span>→</span></button><p class="login-message" id="login-message" aria-live="polite"></p></form><p class="demo-hint">Demo credentials: <b>superadmin</b> / <b>sritw@2026</b></p></div></div>
+
+  <section class="admin-drawer" id="admin-drawer" aria-hidden="true"><div class="admin-header wrap"><div><p class="eyebrow">Authenticated workspace</p><h2>Super Admin panel</h2></div><button class="secondary-button" id="logout-button" type="button">Log out</button></div><div class="admin-content wrap"><form class="notice-form" id="notice-form"><input type="hidden" id="notice-id"><h3 id="form-title">Publish a notice</h3><label for="notice-title">Title<input id="notice-title" required maxlength="100"></label><div class="form-grid"><label for="notice-category">Category<select id="notice-category" required><option>Academics</option><option>Exams</option><option>Placements</option><option>Events</option><option>Hostel</option><option>Transport</option></select></label><label for="notice-priority">Priority<select id="notice-priority" required><option>Normal</option><option>Important</option><option>Urgent</option></select></label></div><div class="form-grid"><label for="notice-date">Publish date<input id="notice-date" type="date" required></label><label for="notice-expiry">Expiry date<input id="notice-expiry" type="date" required></label></div><label for="notice-attachment">Attachment URL <small>(optional)</small><input id="notice-attachment" type="url" placeholder="https://example.com/notice.pdf"></label><label for="notice-summary">Summary<textarea id="notice-summary" rows="4" required maxlength="240"></textarea></label><div class="form-actions"><button class="primary-button" type="submit" id="save-notice">Publish notice <span>→</span></button><button class="text-button" type="button" id="cancel-edit">Clear form</button></div><p class="form-message" id="form-message" aria-live="polite"></p></form><div class="admin-table-wrap"><div class="table-heading"><h3>Manage notices</h3><span id="admin-count">0 notices</span></div><div id="admin-notice-list"></div></div></div></section>
+</body>
+</html>
